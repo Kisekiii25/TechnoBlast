@@ -1,0 +1,118 @@
+/* aldrich-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Aldrich';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/aldrich-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+:root {
+    /* Primary Colors */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+  
+    /* Accent Colors */
+    --color-electric-blue: #007BFF;
+    --color-neon-green: #00FF00;
+    --color-bright-cyan: #00FFFF;
+  
+    /* Neutral Colors */
+    --color-dark-gray: #2B2B2B;
+    --color-light-gray: #CCCCCC;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    scroll-behavior: smooth;
+    font-family: 'Aldrich', Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+*::selection{
+    color: var(--color-dark-gray);
+    background-color: var(--color-light-gray);
+}
+button{
+    margin: 1rem 0;
+    font-family: "Aldrich",Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-dark-gray);
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px var(--color-light-gray);
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+img{
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: auto;
+}
+
+.margin{
+    margin: 0 1rem;   
+}
+
+.hero{
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.719)), 
+    url(/images/topographicBG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 100vh;
+    color: var(--color-white);
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+}
+
+.left{
+    max-width: 100rem;
+}
+
+.right{
+    max-width: 100rem;
+    display: none;
+}
+
+.hero .hero-h1{
+    padding: .2rem 0;
+    font-size: 1.5rem;
+}
+
+.hero .hero-p{
+    font-size: .8rem;
+}
+
+@media (width > 800px){
+    .girlwithcomputer{
+        height: 13rem;
+    }
+    .hero{
+        display: flex;
+    }
+    .right{
+        display: flex;
+    }
+}
+@media (width > 950px){
+    .girlwithcomputer{
+        height: 15rem;
+    }
+}
