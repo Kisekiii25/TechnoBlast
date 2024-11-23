@@ -71,7 +71,7 @@ img{
 .hero{
     display: flex;
     background-image: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.719)), 
-    url(/images/topographicBG.jpg);
+    url(images/topographicBG.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
