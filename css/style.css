@@ -1,0 +1,418 @@
+/* aldrich-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Aldrich';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/aldrich-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+:root {
+    /* Primary Colors */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+  
+    /* Accent Colors */
+    --color-electric-blue: #007BFF;
+    --color-neon-green: #00FF00;
+    --color-bright-cyan: #00FFFF;
+  
+    /* Neutral Colors */
+    --color-dark-gray: #2B2B2B;
+    --color-light-gray: #CCCCCC;
+}
+
+/* TAGS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::selection{
+    color: var(--color-dark-gray);
+    background-color: var(--color-light-gray);
+}
+
+html, body{
+    scroll-behavior: smooth;
+    font-family: "Aldrich", sans-serif !important;
+    font-style: normal;
+    margin: 0 auto;
+}
+
+main{
+    background-color: var(--color-dark-gray);
+}
+
+h1{
+    font-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem); /* Scales between 24px and 40px */
+    line-height: 1.2;
+}
+  
+h2{
+    font-size: clamp(1.25rem, 1.5vw + 0.5rem, 2rem); /* Scales between 20px and 32px */
+    line-height: 1.3;
+}
+  
+h3{
+    font-size: clamp(1.125rem, 1.25vw + 0.5rem, 1.75rem); /* Scales between 18px and 28px */
+    line-height: 1.4;
+}
+  
+p{
+    font-size: clamp(0.75rem, 1vw + 0.5rem, 1.125rem); /* Scales between 16px and 18px */
+    line-height: 1.5;
+}
+  
+button, a{
+    font-size: clamp(0.875rem, 0.9vw + 0.5rem, 1rem) !important;  /* Scales between 14px and 16px */
+    line-height: 1.5 !important;
+    color: var(--color-black) !important;
+    text-decoration: none !important;
+}
+
+button{
+    margin: 1rem 0;
+    font-family: "Aldrich",Arial, Helvetica, sans-serif;
+    font-size:0.875rem;
+    text-transform: uppercase;
+    color: var(--color-dark-gray);
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px var(--color-light-gray);
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+img{
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: auto;
+}
+
+/* GRID */
+.grid-main {
+    --space-lr: 35px;
+    --space-gap: 20px;
+    --col-count: 2;
+    display: grid;
+    grid-template-columns: 1fr repeat(var(--col-count), calc((min(100% - var(--space-lr), 60rem) - (var(--col-count) - 1) * var(--space-gap)) / var(--col-count))) 1fr;
+    gap: var(--space-gap);
+}
+
+/* GRID COSTUM */
+/* 710px */
+@media (width >= 44.375em) {
+    .grid-main {
+        --space-lr: 80px;
+        --space-gap: 40px;
+        --col-count: 12;
+    }
+}
+/* 1000px */
+@media (width >= 62.5em) {
+    .grid-main {
+        --col-count: 12;
+        --space-gap: 40px;
+    }
+}
+
+/* starts here */
+
+/* Navigator */
+/* nav{
+    width: 100%;
+    position: fixed;
+    
+    top: 0;
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li{
+    height: 50px;
+}
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+nav a:hover{
+    background-color: #f0f0f0;
+}
+nav li:first-child{
+    margin-right: auto;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter:blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+} */
+
+
+/* HERO */
+.hero{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.500), rgba(0, 0, 0, 0.500)), 
+    url(/images/topographicBG.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 100vh;
+    color: var(--color-white);
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    /* for parallax */
+    background-attachment: fixed;
+}
+
+.hero .hero-p{
+    opacity: 75%;
+}
+
+.left{
+    grid-column: 2 / -1;
+}
+
+.girlwithcomputer{
+    display: none;
+}
+
+/* VISION AND MISSION */
+.vs-ms{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), 
+    url(/images/bgforvm.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: max-content;
+    color: var(--color-white);
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+
+.vs-ms p{
+    opacity: 75%;
+}
+
+.vs-ms .vision{
+    grid-column: 1/ -1;
+}
+
+.vs-ms .mission{
+    grid-column: 1 / -1;
+}
+
+/* ITEM */
+.item {
+    max-width: 960px;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.item h1{
+    text-align: center;
+    color: var(--color-light-gray);
+}
+
+.slide-container {
+    margin: 0 30px;
+    overflow: hidden;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: 8px;
+}
+
+.card .image-box {
+    height: 200px;
+}
+
+.card .image-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.card .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 12px;
+    padding: 15px;
+    background: var(--color-light-gray);
+
+}
+
+.details .name {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.details .price {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-dark-gray);
+}
+  
+.swiper-navBtn {
+    color: var(--color-black);
+    height: 50px;
+    width: 50px;
+    background: var(--color-light-gray);
+    border-radius: 50%;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+    font-size: 24px;
+}
+  
+.swiper-pagination-bullet {
+    background-color: var(--color-dark-gray);
+}
+  
+@media screen and (max-width: 44.375em) {
+    .swiper-navBtn {
+      display: none;
+    }
+}
+
+/* modal */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content/Box */
+.modal-content {
+    background-color: var(--color-light-gray);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid var(--color-dark-gray);
+    max-width: 70%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: var(--color-light-gray);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.lose:focus {
+    color: var(--color-black);
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+
+
+/* RESPONSIVE */
+/* 710px */
+@media (width >= 44.375em){
+    .girlwithcomputer{
+        height: 12rem;
+        display: flex;
+    }
+
+    .left .hero-h1{
+        padding: .2rem 0;
+        font-size: 2rem;
+    }
+
+    .left .hero-p{
+        font-size: .8rem;
+    }
+
+    .left {
+        grid-column: 2 / 9;
+    }
+
+    .girlwithcomputer{
+        grid-column: 9 / -1;
+    }
+
+    .vs-ms .vision{
+        grid-column: 2/ 14;
+    }
+    
+    .vs-ms .mission{
+        grid-column: 2 / 14;
+    }
+    
+}
+
+/* 1000 */
+@media (width >= 62.5em){
+    .girlwithcomputer{
+        height: 15rem;
+    }
+
+    .left .hero-h1{
+        padding: .2rem 0;
+        font-size: 3rem;
+    }
+
+    .left .hero-p{
+        font-size: 1rem;
+    }
+    
+    .left {
+        grid-column: 2 / 9;
+    }
+
+    .girlwithcomputer{
+        grid-column: 9 / 12;
+    }
+
+}
