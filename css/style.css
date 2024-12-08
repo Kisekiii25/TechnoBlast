@@ -189,7 +189,7 @@ nav li:first-child{
 /* HERO */
 .hero{
     background-image: linear-gradient(rgba(0, 0, 0, 0.500), rgba(0, 0, 0, 0.500)), 
-    url(/images/topographicBG.gif);
+    url(images/topographicBG.gif);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
